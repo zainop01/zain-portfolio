@@ -1,12 +1,16 @@
 import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import { Draggable } from "gsap/Draggable";
-import { FaWindowMinimize, FaWindowMaximize, FaTimes } from "react-icons/fa"; // Importing FontAwesome icons
-import "../../styles/home.css"; // Import your component specific CSS file
-import { FiArrowRight } from "react-icons/fi"; // Importing Feather icons for arrow
+import { FaWindowMinimize, FaWindowMaximize, FaTimes } from "react-icons/fa";
+import "../../styles/home.css";
+import { FiArrowRight } from "react-icons/fi";
 import ZainOp2 from "../../assets/Own2.png";
+import useTypewriter from "../../Components/Typewriiter";
 
 const DraggableComponent = () => {
+  const roles = ["Developer", "Designer", "Editor"];
+  const typewriterText = useTypewriter(roles);
+
   useEffect(() => {
     gsap.registerPlugin(Draggable);
 
@@ -31,48 +35,33 @@ const DraggableComponent = () => {
         });
       },
     });
-
   }, []);
 
   return (
     <div className="container">
       <div className="heading d-flex justify-content-center align-items-center mt-5 pt-5">
-      <h1>Your Interactive <span className="text-changing"></span><span className="blinking-cursor">|</span></h1>
+        <h1>Your <span className="interactive-txt">Interactive</span> {typewriterText}</h1>
       </div>
       {/* Potrait */}
       <div className="draggable potrait" id="potrait">
         <div className="card-top-potrait">
           <h3 className="fs-5 m-0 p-0">Potrait</h3>
           <div className="icons">
-            <i>
-              {" "}
-              <FaWindowMinimize />
-            </i>
-            <i>
-              <FaWindowMaximize />
-            </i>
-            <i>
-              <FaTimes />
-            </i>
+            <i><FaWindowMinimize /></i>
+            <i><FaWindowMaximize /></i>
+            <i><FaTimes /></i>
           </div>
         </div>
         <img src={ZainOp2} alt="" />
       </div>
       {/* About */}
       <div className="draggable about-me" id="about-me">
-        <div className="card-top-about-me ">
+        <div className="card-top-about-me">
           <h3 className="fs-5 m-0 p-0">about-me</h3>
           <div className="icons">
-            <i>
-              {" "}
-              <FaWindowMinimize />
-            </i>
-            <i>
-              <FaWindowMaximize />
-            </i>
-            <i>
-              <FaTimes />
-            </i>
+            <i><FaWindowMinimize /></i>
+            <i><FaWindowMaximize /></i>
+            <i><FaTimes /></i>
           </div>
         </div>
         <div className="about-content">
@@ -82,9 +71,7 @@ const DraggableComponent = () => {
             <span style={{ color: "greenyellow" }}>Web Developer,</span>{" "}
             <span style={{ color: "skyblue" }}>UI/UX Designer,</span>{" "}
             <span style={{ color: "orange" }}>Video Editor,</span>{" "}
-            <span style={{ color: "rgb(186, 113, 255)" }}>
-              Graphic Designer.
-            </span>
+            <span style={{ color: "rgb(186, 113, 255)" }}>Graphic Designer.</span>
           </p>
           {/* Point 2 */}
           <p>
@@ -104,10 +91,7 @@ const DraggableComponent = () => {
             <span style={{ color: "yellow" }}>web agencies,</span>{" "}
             <span style={{ color: "rgb(150, 132, 255)" }}>design studios</span>{" "}
             and other{" "}
-            <span style={{ color: "rgb(255, 57, 166)" }}>
-              {" "}
-              freelance professionals{" "}
-            </span>
+            <span style={{ color: "rgb(255, 57, 166)" }}>freelance professionals </span>
             in the field to add value to the project I work on.
           </p>
           {/* Point 4 */}
@@ -118,9 +102,7 @@ const DraggableComponent = () => {
             <span style={{ color: "rgb(255, 57, 166)" }}>experimenting</span>{" "}
             with many <span style={{ color: "yellow" }}>technologies</span> and
             I also maintain some{" "}
-            <span style={{ color: "rgb(255, 57, 166)" }}>
-              personal projects.
-            </span>{" "}
+            <span style={{ color: "rgb(255, 57, 166)" }}>personal projects.</span>{" "}
             Whenever I can, I like to contribute to{" "}
             <span style={{ color: "greenyellow" }}>open-source</span> to give
             back to the community.
@@ -132,16 +114,9 @@ const DraggableComponent = () => {
         <div className="card-top-social">
           <h3 className="fs-5 m-0 p-0">me-online</h3>
           <div className="icons">
-            <i>
-              {" "}
-              <FaWindowMinimize />
-            </i>
-            <i>
-              <FaWindowMaximize />
-            </i>
-            <i>
-              <FaTimes />
-            </i>
+            <i><FaWindowMinimize /></i>
+            <i><FaWindowMaximize /></i>
+            <i><FaTimes /></i>
           </div>
         </div>
         <div className="social-links">
@@ -182,16 +157,9 @@ const DraggableComponent = () => {
         <div className="card-top-hobbies">
           <h3 className="fs-5 m-0 p-0 me-4">hobbies</h3>
           <div className="icons">
-            <i>
-              {" "}
-              <FaWindowMinimize />
-            </i>
-            <i>
-              <FaWindowMaximize />
-            </i>
-            <i>
-              <FaTimes />
-            </i>
+            <i><FaWindowMinimize /></i>
+            <i><FaWindowMaximize /></i>
+            <i><FaTimes /></i>
           </div>
         </div>
         <div className="hobbies-content">

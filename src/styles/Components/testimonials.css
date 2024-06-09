@@ -1,0 +1,34 @@
+.swiper-container {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .testimonial {
+    background: #222;
+    color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .testimonial-content {
+    text-align: left;
+  }
+  
+  .testimonial-content p {
+    margin: 0 0 10px;
+  }
+  
+  .testimonial-content span {
+    font-size: 0.875em;
+    color: #bbb;
+  }
+  

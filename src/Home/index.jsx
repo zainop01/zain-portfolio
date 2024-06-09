@@ -40,7 +40,7 @@ const Home = () => {
         duration: 3,
         background:
           "linear-gradient(90deg, var(--gradient-start), var(--gradient-end))",
-        filter: "blur(120px)",
+        filter: "blur(100px)",
         width: 300,
         height: 300,
         repeat: -1,
@@ -172,18 +172,18 @@ const Home = () => {
             <div className="theme-buttons-container">
               <button
                 className="theme-button"
-                style={{ backgroundColor: "#FF4040" }}
-                onClick={() => handleThemeChange("#FF4040")}
+                style={{ backgroundColor: "#91D1F8" }}
+                onClick={() => handleThemeChange("#91D1F8")}
               ></button>
               <button
                 className="theme-button"
-                style={{ backgroundColor: "#492CFF" }}
-                onClick={() => handleThemeChange("#492CFF")}
+                style={{ backgroundColor: "#E14F62" }}
+                onClick={() => handleThemeChange("#E14F62")}
               ></button>
               <button
                 className="theme-button"
-                style={{ backgroundColor: "#2EFFFF" }}
-                onClick={() => handleThemeChange("#2EFFFF")}
+                style={{ backgroundColor: "#E1B84F" }}
+                onClick={() => handleThemeChange("#E1B84F")}
               ></button>
               <button
                 className="theme-button"

@@ -1,7 +1,7 @@
 :root {
   --main-color: #8FFF86;
-  --gradient-start: #087e00ab;
-  --gradient-end: #8eff86a3;
+  --gradient-start: #8FFF86ab;
+  --gradient-end: #8FFF86a3;
   --scrollbar-color: #8FFF86;
 }
 
@@ -167,8 +167,8 @@ nav a:nth-child(1) {
 
 .corner {
   position: absolute;
-  width: 50%;
-  height: 50%;
+  width: 30%;
+  height: 30%;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
   filter: blur(120px);
@@ -188,7 +188,7 @@ nav a:nth-child(1) {
 }
 
 .content::-webkit-scrollbar-track {
-  background: transparent;
+  /* background: #8eff8634; */
   border-radius: 10px;
 }
 
@@ -265,6 +265,10 @@ nav a:nth-child(1) {
   color: var(--main-color);
   animation: 1s blink step-end infinite;
 }
+.interactive-txt{
+  color: var(--main-color);
+}
+
 
 @keyframes blink {
   from, to {
@@ -274,7 +278,9 @@ nav a:nth-child(1) {
     border-color: black;
   }
 }
-
+/* .main-projects{
+  height: 100vh;
+} */
 /* Media Queries */
 @media (max-width: 768px) {
   .herosection .bg-img {

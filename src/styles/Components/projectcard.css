@@ -1,0 +1,56 @@
+.project-card-main {
+  z-index: 999;
+  background-color: #0f0f0f8e;
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  width: 70%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 70px 50px;
+  font-family: "Courier Prime", monospace;
+  border: 0.5px solid rgba(255, 255, 255, 0.144);
+  position: relative;
+}
+
+.counts {
+  font-family: "Courier Prime", monospace;
+  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;
+  color: grey;
+}
+
+.title p {
+  font-size: 70px;
+}
+
+.technologies button {
+  border-radius: 30px;
+  border: 0.5px solid rgba(255, 255, 255, 0.144);
+  background-color: #0f0f0f95;
+  outline: none;
+  color: white;
+  padding: 0 20px;
+}
+
+.card-center img {
+  position: absolute;
+  top: -8%;
+  left: 46%;
+  transform-origin: center center;
+  transition: box-shadow 0.5s ease;
+}
+
+.mouse-follower {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+}
