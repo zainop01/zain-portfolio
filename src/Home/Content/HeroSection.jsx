@@ -52,7 +52,7 @@ const HeroSection = () => {
   return (
    <>
      {/* hero section */}
-     <div className="herosection">
+     <div className="herosection" >
         <div className="text-area d-flex flex-column justify-content-center align-items-center h-100">
           <h1>Hi, I'm Zain, a <span className='text-color'>creative</span> <span className="text-changing"></span><span className="blinking-cursor">|</span></h1>
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis rerum quod libero suscipit illum voluptatibus quidem modi autem nam corporis, harum sunt neque dolor iusto quisquam architecto doloremque voluptates ut.</p>

@@ -24,6 +24,7 @@ body {
   height: 100vh;
   background-color: #0f0f0f;
 }
+
 /* .mouse-follower {
   position: fixed;
   top: 0;
@@ -140,6 +141,7 @@ nav a:nth-child(1) {
   color: #707070;
 }
 
+
 .left nav a:hover .title {
   font-family: "Courier Prime", monospace;
 
@@ -242,7 +244,7 @@ nav a:nth-child(1) {
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 0);
-  opacity: 1;
+  opacity: .5;
   transition: opacity 0.5s ease;
 }
 
@@ -437,6 +439,8 @@ h3{
   transition: transform 0.3s ease;
 }
 .potrait {
+  top: 75%;
+  left: 70%;
   width: 250px;
   font-size: 12px;
   position: absolute;
@@ -457,6 +461,8 @@ h3{
   /* gap: 20px; */
 }
 .about-me{
+  top: 20%;
+  left: 25%;
   /* border: 1px solid green; */
   width: 650px;
   font-size: 12px;
@@ -464,9 +470,23 @@ h3{
   border-radius: 5px;
   border: 0.5px solid rgba(255, 255, 255, 0.144);
 }
-.social{
+.hobbies{
+  top: 60%;
+  left: 15%;
   /* border: 1px solid green; */
   width: 250px;
+  /* font-size: 12px; */
+  position: absolute;
+  border-radius: 5px;
+  border: 0.5px solid rgba(255, 255, 255, 0.144);
+}
+.social{
+  bottom: 5%;
+  right: 35%;
+  /* top: 100%; */
+  /* left: 45%; */
+  /* border: 1px solid green; */
+  width:350px;
   font-size: 12px;
   position: absolute;
   border-radius: 5px;
@@ -504,6 +524,21 @@ font-size: 16px;
   border-bottom: 0.5px solid rgba(255, 255, 255, 0.144);
   padding: 14px;
   /* gap: 20px; */
+}
+.card-top-hobbies {
+  /* top: 80%; */
+  /* border: 1px solid red; */
+  /* width: 100%; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 10px; */
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.144);
+  padding: 14px;
+  /* gap: 20px; */
+}
+.hobbies-content{
+padding: 14px;
 }
 .about-content{
   padding: 14px;

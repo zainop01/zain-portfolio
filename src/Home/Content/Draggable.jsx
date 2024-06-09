@@ -1,13 +1,12 @@
-import React, { useEffect } from 'react';
-import { gsap } from 'gsap';
-import { Draggable } from 'gsap/Draggable';
-import { FaWindowMinimize, FaWindowMaximize, FaTimes } from 'react-icons/fa'; // Importing FontAwesome icons
-import '../../styles/home.css'; // Import your component specific CSS file
-import { FiArrowRight } from 'react-icons/fi'; // Importing Feather icons for arrow
-import ZainOp2 from "../../assets/Own2.png"
+import React, { useEffect } from "react";
+import { gsap } from "gsap";
+import { Draggable } from "gsap/Draggable";
+import { FaWindowMinimize, FaWindowMaximize, FaTimes } from "react-icons/fa"; // Importing FontAwesome icons
+import "../../styles/home.css"; // Import your component specific CSS file
+import { FiArrowRight } from "react-icons/fi"; // Importing Feather icons for arrow
+import ZainOp2 from "../../assets/Own2.png";
 
 const DraggableComponent = () => {
-
   useEffect(() => {
     gsap.registerPlugin(Draggable);
 
@@ -32,65 +31,190 @@ const DraggableComponent = () => {
         });
       },
     });
+
   }, []);
 
   return (
     <div className="container">
+      <div className="heading d-flex justify-content-center align-items-center mt-5 pt-5">
+      <h1>Your Interactive <span className="text-changing"></span><span className="blinking-cursor">|</span></h1>
+      </div>
       {/* Potrait */}
       <div className="draggable potrait" id="potrait">
         <div className="card-top-potrait">
-          <h3>Potrait</h3>
+          <h3 className="fs-5 m-0 p-0">Potrait</h3>
           <div className="icons">
-            <FaWindowMinimize />
-            <FaWindowMaximize />
-            <FaTimes />
+            <i>
+              {" "}
+              <FaWindowMinimize />
+            </i>
+            <i>
+              <FaWindowMaximize />
+            </i>
+            <i>
+              <FaTimes />
+            </i>
           </div>
         </div>
         <img src={ZainOp2} alt="" />
       </div>
       {/* About */}
       <div className="draggable about-me" id="about-me">
-        <div className="card-top-about-me">
-          <h3>about-me</h3>
+        <div className="card-top-about-me ">
+          <h3 className="fs-5 m-0 p-0">about-me</h3>
           <div className="icons">
-            <FaWindowMinimize />
-            <FaWindowMaximize />
-            <FaTimes />
+            <i>
+              {" "}
+              <FaWindowMinimize />
+            </i>
+            <i>
+              <FaWindowMaximize />
+            </i>
+            <i>
+              <FaTimes />
+            </i>
           </div>
         </div>
         <div className="about-content">
           {/* Point 1 */}
-          <p><span className="points">1 -</span>Nice to meet you! I'm Zain, I'm a
-            <span style={{ color: 'greenyellow' }}>Web Developer,</span> <span style={{ color: 'skyblue' }}>UI/UX Designer,</span> <span style={{ color: 'orange' }}>Video Editor,</span> <span style={{ color: 'rgb(186, 113, 255)' }}>Graphic Designer.</span></p>
+          <p>
+            <span className="points">1 -</span>Nice to meet you! I'm Zain, I'm a
+            <span style={{ color: "greenyellow" }}>Web Developer,</span>{" "}
+            <span style={{ color: "skyblue" }}>UI/UX Designer,</span>{" "}
+            <span style={{ color: "orange" }}>Video Editor,</span>{" "}
+            <span style={{ color: "rgb(186, 113, 255)" }}>
+              Graphic Designer.
+            </span>
+          </p>
           {/* Point 2 */}
-          <p><span className="points">2 -</span>I'm passionate about both
-            <span style={{ color: 'yellow' }}>web design</span> and <span style={{ color: 'rgb(255, 119, 119)' }}>web development</span> in all of its aspects. This is where both my <span style={{ color: 'rgb(150, 132, 255)' }}>technical</span> and <span style={{ color: 'rgb(255, 57, 166)' }}>creative </span>skills can be used at their best.</p>
+          <p>
+            <span className="points">2 -</span>I'm passionate about both
+            <span style={{ color: "yellow" }}>web design</span> and{" "}
+            <span style={{ color: "rgb(255, 119, 119)" }}>web development</span>{" "}
+            in all of its aspects. This is where both my{" "}
+            <span style={{ color: "rgb(150, 132, 255)" }}>technical</span> and{" "}
+            <span style={{ color: "rgb(255, 57, 166)" }}>creative </span>skills
+            can be used at their best.
+          </p>
           {/* Point 3 */}
-          <p><span className="points">3 -</span>I bring my <span style={{ color: 'greenyellow' }}>expertise</span> in my collaborations with <span style={{ color: 'yellow' }}>web agencies,</span> <span style={{ color: 'rgb(150, 132, 255)' }}>design studios</span> and other <span style={{ color: 'rgb(255, 57, 166)' }}> freelance professionals </span>in the field to add value to the project I work on.</p>
+          <p>
+            <span className="points">3 -</span>I bring my{" "}
+            <span style={{ color: "greenyellow" }}>expertise</span> in my
+            collaborations with{" "}
+            <span style={{ color: "yellow" }}>web agencies,</span>{" "}
+            <span style={{ color: "rgb(150, 132, 255)" }}>design studios</span>{" "}
+            and other{" "}
+            <span style={{ color: "rgb(255, 57, 166)" }}>
+              {" "}
+              freelance professionals{" "}
+            </span>
+            in the field to add value to the project I work on.
+          </p>
           {/* Point 4 */}
-          <p><span className="points">4 -</span><span style={{ color: 'greenyellow' }}>Coding</span> for me is not just my work, I like <span style={{ color: 'rgb(255, 57, 166)' }}>experimenting</span> with many <span style={{ color: 'yellow' }}>technologies</span> and I also maintain some <span style={{ color: 'rgb(255, 57, 166)' }}>personal projects.</span> Whenever I can, I like to contribute to <span style={{ color: 'greenyellow' }}>open-source</span> to give back to the community.</p>
+          <p>
+            <span className="points">4 -</span>
+            <span style={{ color: "greenyellow" }}>Coding</span> for me is not
+            just my work, I like{" "}
+            <span style={{ color: "rgb(255, 57, 166)" }}>experimenting</span>{" "}
+            with many <span style={{ color: "yellow" }}>technologies</span> and
+            I also maintain some{" "}
+            <span style={{ color: "rgb(255, 57, 166)" }}>
+              personal projects.
+            </span>{" "}
+            Whenever I can, I like to contribute to{" "}
+            <span style={{ color: "greenyellow" }}>open-source</span> to give
+            back to the community.
+          </p>
         </div>
       </div>
       {/* Social */}
       <div className="draggable social" id="social">
         <div className="card-top-social">
-          <h3>me-online</h3>
+          <h3 className="fs-5 m-0 p-0">me-online</h3>
           <div className="icons">
-            <FaWindowMinimize />
-            <FaWindowMaximize />
-            <FaTimes />
+            <i>
+              {" "}
+              <FaWindowMinimize />
+            </i>
+            <i>
+              <FaWindowMaximize />
+            </i>
+            <i>
+              <FaTimes />
+            </i>
           </div>
         </div>
         <div className="social-links">
-          <div className="mb-1"><span className="points">1</span><a href="#" target="_blank">linkdin <FiArrowRight /></a></div>
-          <div className="mb-1"><span className="points">2</span><a href="#" target="_blank">github <FiArrowRight /></a></div>
-          <div className="mb-1"><span className="points">3</span><a href="#" target="_blank">instagram <FiArrowRight /></a></div>
-          <div className="mb-1"><span className="points">4</span><a href="#" target="_blank">facebook <FiArrowRight /></a></div>
-          <div className="mb-1"><span className="points">5</span><a href="#" target="_blank">twitter <FiArrowRight /></a></div>
+          <div className="mb-1">
+            <span className="points">1</span>
+            <a href="#" target="_blank">
+              linkdin <FiArrowRight />
+            </a>
+          </div>
+          <div className="mb-1">
+            <span className="points">2</span>
+            <a href="#" target="_blank">
+              github <FiArrowRight />
+            </a>
+          </div>
+          <div className="mb-1">
+            <span className="points">3</span>
+            <a href="#" target="_blank">
+              instagram <FiArrowRight />
+            </a>
+          </div>
+          <div className="mb-1">
+            <span className="points">4</span>
+            <a href="#" target="_blank">
+              facebook <FiArrowRight />
+            </a>
+          </div>
+          <div className="mb-1">
+            <span className="points">5</span>
+            <a href="#" target="_blank">
+              twitter <FiArrowRight />
+            </a>
+          </div>
+        </div>
+      </div>
+      {/* Hobbies */}
+      <div className="draggable hobbies" id="hobbies">
+        <div className="card-top-hobbies">
+          <h3 className="fs-5 m-0 p-0 me-4">hobbies</h3>
+          <div className="icons">
+            <i>
+              {" "}
+              <FaWindowMinimize />
+            </i>
+            <i>
+              <FaWindowMaximize />
+            </i>
+            <i>
+              <FaTimes />
+            </i>
+          </div>
+        </div>
+        <div className="hobbies-content">
+          <div className="d-flex">
+            <span className="points">1</span>
+            <p className="m-0 p-0">🎮 Gaming</p>
+          </div>
+          <div className="d-flex">
+            <span className="points">2</span>
+            <p className="m-0 p-0">🏊‍♀️ Swimming</p>
+          </div>
+          <div className="d-flex">
+            <span className="points">3</span>
+            <p className="m-0 p-0">📚 Reading</p>
+          </div>
+          <div className="d-flex">
+            <span className="points">4</span>
+            <p className="m-0 p-0">👞 Hiking</p>
+          </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default DraggableComponent;
