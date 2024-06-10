@@ -84,16 +84,18 @@ const TestimonialCarousel = () => {
                     <div key={testimonial.id}>
                         <div className="testimonial-card">
                           <div className="card-top">
-                            <div className="icons text-end">
+                            <div className="icons text-end m-0 p-0">
                                 <i><FaWindowMinimize /></i>
                                 <i><FaWindowMaximize /></i>
                                 <i><FaTimes /></i>
                                 </div>
                           </div>
-                            <img src={testimonial.image} alt={testimonial.author} className="testimonial-image" />
+                          <div className="body-testimonials">
+                          <img src={testimonial.image} alt={testimonial.author} className="testimonial-image" />
                             <p>{testimonial.text}</p>
                             <h4>{testimonial.author}</h4>
                             <h5>{testimonial.position}</h5>
+                          </div>               
                         </div>
                     </div>
                 ))}

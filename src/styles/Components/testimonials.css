@@ -29,7 +29,7 @@ h1 {
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
   border-radius: 10px;
-  padding: 20px;
+  /* padding: 20px; */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   color: #fff;
   transition: transform 0.3s ease, opacity 0.3s ease;
@@ -70,4 +70,11 @@ p {
   top: 0;
   left: 0;
   transition: width 0.5s ease;
+}
+.card-top{
+  padding: 10px;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.144);
+}
+.body-testimonials{
+  padding: 20px;
 }
