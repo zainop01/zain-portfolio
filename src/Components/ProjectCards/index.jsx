@@ -14,17 +14,28 @@ const ProjectsCards = (props) => {
     gsap.set(imageElement, { scale: 0, opacity: 0 });
 
     const handleMouseEnterCard = () => {
-      gsap.to(imageElement, { scale: 1, opacity: 1, duration: 0.5, ease: "power2.out" });
+      gsap.to(imageElement, {
+        scale: 1,
+        opacity: 1,
+        duration: 0.5,
+        ease: "power2.out",
+      });
     };
 
     const handleMouseLeaveCard = () => {
-      gsap.to(imageElement, { scale: 0, opacity: 0, duration: 0.5, ease: "power2.out" });
+      gsap.to(imageElement, {
+        scale: 0.5,
+        opacity: 0,
+        duration: 0.5,
+        ease: "power2.out",
+      });
     };
 
     const handleMouseEnterImage = () => {
       gsap.to(imageElement, {
         rotation: 10,
-        boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.5), 0px 0px 30px rgba(0, 0, 0, 0.4), 0px 0px 40px rgba(0, 0, 0, 0.3)",
+        boxShadow:
+          "0px 0px 20px rgba(0, 0, 0, 0.5), 0px 0px 30px rgba(0, 0, 0, 0.4), 0px 0px 40px rgba(0, 0, 0, 0.3)",
         duration: 0.5,
         ease: "power2.out",
       });
@@ -49,7 +60,11 @@ const ProjectsCards = (props) => {
     const followerElement = followerRef.current;
     gsap.set(followerElement, { xPercent: -50, yPercent: -50 });
     const moveFollower = (event) => {
-      gsap.to(followerElement, { x: event.clientX, y: event.clientY, duration: 0.1 });
+      gsap.to(followerElement, {
+        x: event.clientX,
+        y: event.clientY,
+        duration: 0.1,
+      });
     };
     document.addEventListener("mousemove", moveFollower);
 
@@ -68,16 +83,20 @@ const ProjectsCards = (props) => {
       <div className="project-card-main my-5" ref={cardRef}>
         <div className="card-left">
           <div className="counts">{props.count}</div>
-          <div className="title"><p>{props.title}</p></div>
-          <div className="technologies">
-            <button>{props.technologies}</button>
+          <div className="title">
+            <p>{props.title}</p>
           </div>
+          <div className="technologies">
+          {props.technologies.map((tech, index) => (
+            <button key={index}>{tech}</button>
+          ))}
+        </div>
         </div>
         <div className="card-center">
           <img src={props.image} alt="" ref={imageRef} className="card-image" />
         </div>
         <div className="card-right">
-         <p>2023</p>
+          <p>2023</p>
         </div>
       </div>
       <div className="mouse-follower" ref={followerRef}></div>

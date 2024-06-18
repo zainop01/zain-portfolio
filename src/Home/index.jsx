@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../styles/home.css";
 import "bootstrap/dist/css/bootstrap.css";
+import { NavLink } from "react-router-dom";
 import { gsap } from "gsap";
 import { FaRegWindowMinimize, FaRegSquare, FaInstagram, FaLinkedin, FaFacebook, FaGithub, FaCircle } from "react-icons/fa";
 import { RxCross1 } from "react-icons/rx";
@@ -203,30 +204,32 @@ const Home = () => {
         </div>
         <div className="left d-flex justify-content-center align-items-center">
           <nav className="d-flex flex-column align-items-center gap-3">
-            <a href="">
-              <i>
+           <NavLink to="/">
+           <i>
                 <GoHome />
               </i>
               <span className="title">Home</span>
-            </a>
-            <a href="">
+           </NavLink>
+            
+            
+           <NavLink to="/about">
               <i>
                 <CiUser />
               </i>
               <span className="title">About</span>
-            </a>
-            <a href="">
+              </NavLink>
+              <NavLink to="/work">
               <i>
                 <IoBriefcaseOutline />
               </i>
               <span className="title">Work</span>
-            </a>
-            <a href="">
+              </NavLink>
+              <NavLink to="/contact">
               <i>
                 <CiMail />
               </i>
               <span className="title">Contact</span>
-            </a>
+              </NavLink>
           </nav>
         </div>
 

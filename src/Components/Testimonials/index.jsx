@@ -4,6 +4,8 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '../../styles/Components/testimonials.css';
 import { FaWindowMinimize, FaWindowMaximize, FaTimes } from "react-icons/fa";
+import profile from "../../assets/test-profile.png"
+
 
 import gsap from 'gsap';
 
@@ -13,21 +15,21 @@ const testimonials = [
         text: "Stefano takes the development process to another level. He is inspiring and always available to support the team with his positive attitude. I'm honored for the opportunity to work with him and to see the design to production process behind our projects. I highly recommend Stefano for your next projects.",
         author: "Riccardo Marconato",
         position: "Independent Product Designer",
-        image: "path/to/image1.jpg" // Replace with actual image path
+        image: profile
     },
     {
         id: 2,
-        text: "I've been working with Stefano for several years now on countless projects and I can honestly say that he blows my mind every single time! As a designer it's an absolute pleasure working with him as he's constantly delivering accurate implementations which avoids a lot of unnecessary back and forth between design and development. His capabilities go way beyond the look of things as he's great at delivering state-of-the-art technical solutions that rely on the latest technologies. Working with him is an absolute pleasure as he makes complex things really simple.",
+        text:  "Stefano takes the development process to another level. He is inspiring and always available to support the team with his positive attitude. I'm honored for the opportunity to work with him and to see the design to production process behind our projects. I highly recommend Stefano for your next projects.",
         author: "Lorenzo Bocchi",
         position: "Freelance Digital Designer & Founder @ Vool™",
-        image: "path/to/image2.jpg" // Replace with actual image path
+        image: profile
     },
     {
       id: 3,
-      text: "I've been working with Stefano for several years now on countless projects and I can honestly say that he blows my mind every single time! As a designer it's an absolute pleasure working with him as he's constantly delivering accurate implementations which avoids a lot of unnecessary back and forth between design and development. His capabilities go way beyond the look of things as he's great at delivering state-of-the-art technical solutions that rely on the latest technologies. Working with him is an absolute pleasure as he makes complex things really simple.",
+      text:  "Stefano takes the development process to another level. He is inspiring and always available to support the team with his positive attitude. I'm honored for the opportunity to work with him and to see the design to production process behind our projects. I highly recommend Stefano for your next projects.",
       author: "Lorenzo Bocchi",
       position: "Freelance Digital Designer & Founder @ Vool™",
-      image: "path/to/image2.jpg" // Replace with actual image path
+      image: profile
   },
 ];
 
@@ -79,6 +81,9 @@ const TestimonialCarousel = () => {
 
     return (
         <div className="carousel-container">
+            <div className="testimonial-head w-25 text-center m-auto">
+                <h1>Nice thing <span className="people-says">peoples says</span> about my work</h1>
+            </div>
             <Slider {...settings}>
                 {testimonials.map(testimonial => (
                     <div key={testimonial.id}>

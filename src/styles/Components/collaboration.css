@@ -1,0 +1,29 @@
+.collaboration-main{
+    position: relative;
+    width: 80%;
+    margin: 200px auto 100px auto ;
+    border: 1px solid #707070;
+    border-radius: 7px;
+    background-color: #0f0f0fb5;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    z-index: 999;
+}
+.collaboration-img img{
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    background-color: var(--main-color);
+}
+.collaboration-heading h1{
+    font-size: 86px;
+}
+.collaboration-btn button{
+    /* position: absolute; */
+    /* bottom: 0; */
+    background-color: #0f0f0f;
+    color: #fff;
+  outline: none;
+  border: 1px solid #707070;
+  padding: 10px 20px;
+}

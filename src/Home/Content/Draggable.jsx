@@ -4,7 +4,7 @@ import { Draggable } from "gsap/Draggable";
 import { FaWindowMinimize, FaWindowMaximize, FaTimes } from "react-icons/fa";
 import "../../styles/home.css";
 import { FiArrowRight } from "react-icons/fi";
-import ZainOp2 from "../../assets/Own2.png";
+import ZainOp2 from "../../assets/Own3.png";
 import useTypewriter from "../../Components/Typewriiter";
 
 const DraggableComponent = () => {
@@ -180,6 +180,9 @@ const DraggableComponent = () => {
             <p className="m-0 p-0">👞 Hiking</p>
           </div>
         </div>
+      </div>
+      <div className="more-about">
+        <button>about-me <FiArrowRight /> </button>
       </div>
     </div>
   );

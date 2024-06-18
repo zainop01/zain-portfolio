@@ -6,9 +6,13 @@
   margin: 0;
 } */
 
+/* .carousel-container .testimonial-head h1{
+  font-family: "Courier Prime", monospace;
+} */
+
 h1 {
   font-size: 2em;
-  color: #a4ff47;
+  color: #ffffff;
   margin-bottom: 20px;
 }
 
@@ -17,8 +21,12 @@ h1 {
 }
 
 .carousel-container {
+  /* border: 1px solid red; */
   width: 80%;
-  margin: 0 auto;
+  /* height: 90vh; */
+  justify-content: center;
+  align-items: center;
+  margin: 100px auto;
   /* z-index: 999999999; */
 }
 
@@ -65,7 +73,7 @@ p {
 
 .slider-line {
   height: 2px;
-  background: #a4ff47;
+  background: var(--main-color);
   position: absolute;
   top: 0;
   left: 0;
