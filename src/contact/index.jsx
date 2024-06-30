@@ -3,7 +3,15 @@ import { NavLink } from "react-router-dom";
 // import "../styles/contact.css";
 import "bootstrap/dist/css/bootstrap.css";
 import { gsap } from "gsap";
-import { FaRegWindowMinimize, FaRegSquare, FaInstagram, FaLinkedin, FaFacebook, FaGithub, FaCircle } from "react-icons/fa";
+import {
+  FaRegWindowMinimize,
+  FaRegSquare,
+  FaInstagram,
+  FaLinkedin,
+  FaFacebook,
+  FaGithub,
+  FaCircle,
+} from "react-icons/fa";
 import { RxCross1 } from "react-icons/rx";
 import { GoHome } from "react-icons/go";
 import { CiUser, CiMail } from "react-icons/ci";
@@ -18,12 +26,11 @@ const Contact = () => {
   const [currentThemeColor, setCurrentThemeColor] = useState("#E14F62");
   const [isFullScreen, setIsFullScreen] = useState(false);
 
-
   // const handleFinishLoading = () => {
   //   // Animation to smoothly transition content into view
   //   // gsap.to(".main-container", { opacity: 1, duration: 1 });
   //   setIsLoaded(true);
-  //   animateContent(); 
+  //   animateContent();
   // };
 
   const animateContent = () => {
@@ -115,6 +122,10 @@ const Contact = () => {
     setShowThemeButtons(false);
   };
 
+  useEffect(() => {
+    handleThemeChange("#91D1F8");
+  }, []);
+
   const handleRightClick = (e) => {
     e.preventDefault();
     setShowThemeButtons(!showThemeButtons);
@@ -148,7 +159,7 @@ const Contact = () => {
   return (
     <div className="parent-container">
       {/* {!isLoaded && <Loader onFinishLoading={handleFinishLoading} />} */}
-         {/* Render content once loaded */}
+      {/* Render content once loaded */}
       {/* {isLoaded && ( */}
       <div className="main-container">
         <div className="top px-2 d-flex justify-content-between">
@@ -204,32 +215,31 @@ const Contact = () => {
         </div>
         <div className="left d-flex justify-content-center align-items-center">
           <nav className="d-flex flex-column align-items-center gap-3">
-          <NavLink to="/">
-           <i>
+            <NavLink to="/">
+              <i>
                 <GoHome />
               </i>
               <span className="title">Home</span>
-           </NavLink>
-            
-            
-           <NavLink to="/about">
+            </NavLink>
+
+            <NavLink to="/about">
               <i>
                 <CiUser />
               </i>
               <span className="title">About</span>
-              </NavLink>
-              <NavLink to="/work">
+            </NavLink>
+            <NavLink to="/work">
               <i>
                 <IoBriefcaseOutline />
               </i>
               <span className="title">Work</span>
-              </NavLink>
-              <NavLink to="/contact">
+            </NavLink>
+            <NavLink to="/contact">
               <i>
                 <CiMail />
               </i>
               <span className="title">Contact</span>
-              </NavLink>
+            </NavLink>
           </nav>
         </div>
 
@@ -240,7 +250,6 @@ const Contact = () => {
       </div>
       {/* )} */}
     </div>
-
   );
 };
 

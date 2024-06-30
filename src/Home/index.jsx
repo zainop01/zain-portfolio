@@ -14,14 +14,10 @@ import Content from "./Content/index";
 const Home = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isDim, setIsDim] = useState(false);
-  const [showThemeButtons, setShowThemeButtons] = useState(false);
   const [currentThemeColor, setCurrentThemeColor] = useState("#8FFF86");
   const [isFullScreen, setIsFullScreen] = useState(false);
 
-
   const handleFinishLoading = () => {
-    // Animation to smoothly transition content into view
-    // gsap.to(".main-container", { opacity: 1, duration: 1 });
     setIsLoaded(true);
     animateContent(); 
   };
@@ -56,35 +52,6 @@ const Home = () => {
 
   const toggleDim = () => {
     setIsDim(!isDim);
-    const dimFactor = isDim ? "ab" : "1a";
-    const newGradientStart = currentThemeColor + dimFactor;
-    const newGradientEnd = currentThemeColor + "4a";
-
-    document.documentElement.style.setProperty(
-      "--gradient-start",
-      newGradientStart
-    );
-    document.documentElement.style.setProperty(
-      "--gradient-end",
-      newGradientEnd
-    );
-
-    document.documentElement.style.setProperty(
-      "--main-color",
-      currentThemeColor
-    );
-    document.documentElement.style.setProperty(
-      "--scrollbar-color",
-      currentThemeColor
-    );
-
-    const corners = document.querySelectorAll(".corner");
-    corners.forEach((corner) => {
-      gsap.to(corner, {
-        duration: 1,
-        background: `linear-gradient(135deg, ${newGradientStart}, ${newGradientEnd})`,
-      });
-    });
   };
 
   const handleThemeChange = (color) => {
@@ -111,14 +78,11 @@ const Home = () => {
         background: `linear-gradient(135deg, ${newGradientStart}, ${newGradientEnd})`,
       });
     });
-
-    setShowThemeButtons(false);
   };
 
-  const handleRightClick = (e) => {
-    e.preventDefault();
-    setShowThemeButtons(!showThemeButtons);
-  };
+  useEffect(() => {
+    handleThemeChange("#8FFF86");
+  }, []);
 
   const toggleFullScreen = () => {
     if (!isFullScreen) {
@@ -148,7 +112,7 @@ const Home = () => {
   return (
     <div className="parent-container">
       {/* {!isLoaded && <Loader onFinishLoading={handleFinishLoading} />} */}
-         {/* Render content once loaded */}
+      {/* Render content once loaded */}
       {/* {isLoaded && ( */}
       <div className="main-container">
         <div className="top px-2 d-flex justify-content-between">
@@ -163,73 +127,67 @@ const Home = () => {
           </div>
         </div>
         <div className="bottom d-flex justify-content-between align-items-center px-3">
+          <div className="theme-buttons-container d-flex">
+            <button
+              className="theme-button"
+              style={{ backgroundColor: "#91D1F8" }}
+              onClick={() => handleThemeChange("#91D1F8")}
+            ></button>
+            <button
+              className="theme-button"
+              style={{ backgroundColor: "#E14F62" }}
+              onClick={() => handleThemeChange("#E14F62")}
+            ></button>
+            <button
+              className="theme-button"
+              style={{ backgroundColor: "#E1B84F" }}
+              onClick={() => handleThemeChange("#E1B84F")}
+            ></button>
+            <button
+              className="theme-button"
+              style={{ backgroundColor: "#8FFF86" }}
+              onClick={() => handleThemeChange("#8FFF86")}
+            ></button>
+          </div>
           <FaCircle
             className="theme-button"
             onClick={toggleDim}
-            onContextMenu={handleRightClick}
             style={{ color: currentThemeColor }}
           />
-          {showThemeButtons && (
-            <div className="theme-buttons-container">
-              <button
-                className="theme-button"
-                style={{ backgroundColor: "#91D1F8" }}
-                onClick={() => handleThemeChange("#91D1F8")}
-              ></button>
-              <button
-                className="theme-button"
-                style={{ backgroundColor: "#E14F62" }}
-                onClick={() => handleThemeChange("#E14F62")}
-              ></button>
-              <button
-                className="theme-button"
-                style={{ backgroundColor: "#E1B84F" }}
-                onClick={() => handleThemeChange("#E1B84F")}
-              ></button>
-              <button
-                className="theme-button"
-                style={{ backgroundColor: "#8FFF86" }}
-                onClick={() => handleThemeChange("#8FFF86")}
-              ></button>
-            </div>
-          )}
           <div className="country ms-5">Based in Pakistan</div>
           <div className="links gap-2 d-flex">
             <FaLinkedin />
             <FaInstagram />
             <FaFacebook />
-            {/* <FaXTwitter /> */}
             <FaGithub />
           </div>
         </div>
         <div className="left d-flex justify-content-center align-items-center">
           <nav className="d-flex flex-column align-items-center gap-3">
-           <NavLink to="/">
-           <i>
+            <NavLink to="/">
+              <i>
                 <GoHome />
               </i>
               <span className="title">Home</span>
-           </NavLink>
-            
-            
-           <NavLink to="/about">
+            </NavLink>
+            <NavLink to="/about">
               <i>
                 <CiUser />
               </i>
               <span className="title">About</span>
-              </NavLink>
-              <NavLink to="/work">
+            </NavLink>
+            <NavLink to="/work">
               <i>
                 <IoBriefcaseOutline />
               </i>
               <span className="title">Work</span>
-              </NavLink>
-              <NavLink to="/contact">
+            </NavLink>
+            <NavLink to="/contact">
               <i>
                 <CiMail />
               </i>
               <span className="title">Contact</span>
-              </NavLink>
+            </NavLink>
           </nav>
         </div>
 
@@ -240,7 +198,6 @@ const Home = () => {
       </div>
       {/* )} */}
     </div>
-
   );
 };
 
