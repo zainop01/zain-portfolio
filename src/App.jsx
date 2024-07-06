@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import Router from './Routes/routes'
 import Lenis from '@studio-freight/lenis';
+import "./styles/theme.css"
 
 // import Home from './Home/index'
 

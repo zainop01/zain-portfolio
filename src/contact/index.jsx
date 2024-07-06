@@ -1,37 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-// import "../styles/contact.css";
 import "bootstrap/dist/css/bootstrap.css";
 import { gsap } from "gsap";
-import {
-  FaRegWindowMinimize,
-  FaRegSquare,
-  FaInstagram,
-  FaLinkedin,
-  FaFacebook,
-  FaGithub,
-  FaCircle,
-} from "react-icons/fa";
+import { FaRegWindowMinimize, FaRegSquare, FaInstagram, FaLinkedin, FaFacebook, FaGithub, FaCircle } from "react-icons/fa";
 import { RxCross1 } from "react-icons/rx";
 import { GoHome } from "react-icons/go";
 import { CiUser, CiMail } from "react-icons/ci";
 import { IoBriefcaseOutline } from "react-icons/io5";
-// import Content from "./Content/index";
-// import Loader from "./loader";
+import HeroSectionContact from "./ContactContent/HeroSectionContact";
+import "../styles/contact.css"
+import MyForm from "./ContactContent/ContactForm";
+import ContactContent from "./ContactContent";
+// import Content from "./Content";
 
 const Contact = () => {
-  // const [isLoaded, setIsLoaded] = useState(false);
   const [isDim, setIsDim] = useState(false);
-  const [showThemeButtons, setShowThemeButtons] = useState(false);
-  const [currentThemeColor, setCurrentThemeColor] = useState("#E14F62");
+  const [currentThemeColor, setCurrentThemeColor] = useState("#91D1F8");
   const [isFullScreen, setIsFullScreen] = useState(false);
-
-  // const handleFinishLoading = () => {
-  //   // Animation to smoothly transition content into view
-  //   // gsap.to(".main-container", { opacity: 1, duration: 1 });
-  //   setIsLoaded(true);
-  //   animateContent();
-  // };
 
   const animateContent = () => {
     gsap.from(".main-container", {
@@ -118,18 +103,11 @@ const Contact = () => {
         background: `linear-gradient(135deg, ${newGradientStart}, ${newGradientEnd})`,
       });
     });
-
-    setShowThemeButtons(false);
   };
 
-  useEffect(() => {
-    handleThemeChange("#91D1F8");
+  useEffect(() =>{
+    handleThemeChange('#91D1F8');
   }, []);
-
-  const handleRightClick = (e) => {
-    e.preventDefault();
-    setShowThemeButtons(!showThemeButtons);
-  };
 
   const toggleFullScreen = () => {
     if (!isFullScreen) {
@@ -158,58 +136,55 @@ const Contact = () => {
 
   return (
     <div className="parent-container">
-      {/* {!isLoaded && <Loader onFinishLoading={handleFinishLoading} />} */}
-      {/* Render content once loaded */}
-      {/* {isLoaded && ( */}
       <div className="main-container">
         <div className="top px-2 d-flex justify-content-between">
           <div className="logo fs-5 mt-1">op</div>
           <div className="logo-name fs-5 ms-4 mt-1">zainop</div>
           <div className="controls me-2 gap-3 d-flex">
-            <i>
+          <i>
               <FaRegWindowMinimize />
             </i>
+            <i>
             <FaRegSquare onClick={toggleFullScreen} />
-            <RxCross1 />
+            </i>
+           <i>
+           <RxCross1 />
+           </i>
           </div>
         </div>
         <div className="bottom d-flex justify-content-between align-items-center px-3">
           <FaCircle
             className="theme-button"
             onClick={toggleDim}
-            onContextMenu={handleRightClick}
             style={{ color: currentThemeColor }}
           />
-          {showThemeButtons && (
-            <div className="theme-buttons-container">
-              <button
-                className="theme-button"
-                style={{ backgroundColor: "#91D1F8" }}
-                onClick={() => handleThemeChange("#91D1F8")}
-              ></button>
-              <button
-                className="theme-button"
-                style={{ backgroundColor: "#E14F62" }}
-                onClick={() => handleThemeChange("#E14F62")}
-              ></button>
-              <button
-                className="theme-button"
-                style={{ backgroundColor: "#E1B84F" }}
-                onClick={() => handleThemeChange("#E1B84F")}
-              ></button>
-              <button
-                className="theme-button"
-                style={{ backgroundColor: "#8FFF86" }}
-                onClick={() => handleThemeChange("#8FFF86")}
-              ></button>
-            </div>
-          )}
+          <div className="theme-buttons-container">
+            <button
+              className="theme-button"
+              style={{ backgroundColor: "#91D1F8" }}
+              onClick={() => handleThemeChange("#91D1F8")}
+            ></button>
+            <button
+              className="theme-button"
+              style={{ backgroundColor: "#E14F62" }}
+              onClick={() => handleThemeChange("#E14F62")}
+            ></button>
+            <button
+              className="theme-button"
+              style={{ backgroundColor: "#E1B84F" }}
+              onClick={() => handleThemeChange("#E1B84F")}
+            ></button>
+            <button
+              className="theme-button"
+              style={{ backgroundColor: "#8FFF86" }}
+              onClick={() => handleThemeChange("#8FFF86")}
+            ></button>
+          </div>
           <div className="country ms-5">Based in Pakistan</div>
           <div className="links gap-2 d-flex">
             <FaLinkedin />
             <FaInstagram />
             <FaFacebook />
-            {/* <FaXTwitter /> */}
             <FaGithub />
           </div>
         </div>
@@ -221,7 +196,6 @@ const Contact = () => {
               </i>
               <span className="title">Home</span>
             </NavLink>
-
             <NavLink to="/about">
               <i>
                 <CiUser />
@@ -242,13 +216,11 @@ const Contact = () => {
             </NavLink>
           </nav>
         </div>
-
         {/* <Content /> */}
-
+      <ContactContent/>
         <div className="corner top-left"></div>
         <div className="corner bottom-right"></div>
       </div>
-      {/* )} */}
     </div>
   );
 };

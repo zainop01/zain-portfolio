@@ -1,26 +1,19 @@
 import React, { useEffect, useState } from "react";
-import "../styles/home.css";
-import "bootstrap/dist/css/bootstrap.css";
 import { NavLink } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.css";
 import { gsap } from "gsap";
 import { FaRegWindowMinimize, FaRegSquare, FaInstagram, FaLinkedin, FaFacebook, FaGithub, FaCircle } from "react-icons/fa";
 import { RxCross1 } from "react-icons/rx";
 import { GoHome } from "react-icons/go";
 import { CiUser, CiMail } from "react-icons/ci";
 import { IoBriefcaseOutline } from "react-icons/io5";
-import Content from "./Content/index";
-// import Loader from "./loader";
+import Content from "./Content";
 
 const Home = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
   const [isDim, setIsDim] = useState(false);
   const [currentThemeColor, setCurrentThemeColor] = useState("#8FFF86");
   const [isFullScreen, setIsFullScreen] = useState(false);
-
-  const handleFinishLoading = () => {
-    setIsLoaded(true);
-    animateContent(); 
-  };
+  const [isMinimized, setIsMinimized] = useState(false);
 
   const animateContent = () => {
     gsap.from(".main-container", {
@@ -35,8 +28,7 @@ const Home = () => {
     const animateCorners = (className) => {
       gsap.to(`.${className}`, {
         duration: 3,
-        background:
-          "linear-gradient(90deg, var(--gradient-start), var(--gradient-end))",
+        background: "linear-gradient(90deg, var(--gradient-start), var(--gradient-end))",
         filter: "blur(100px)",
         width: 300,
         height: 300,
@@ -52,6 +44,22 @@ const Home = () => {
 
   const toggleDim = () => {
     setIsDim(!isDim);
+    const dimFactor = isDim ? "ab" : "1a";
+    const newGradientStart = currentThemeColor + dimFactor;
+    const newGradientEnd = currentThemeColor + "4a";
+
+    document.documentElement.style.setProperty("--gradient-start", newGradientStart);
+    document.documentElement.style.setProperty("--gradient-end", newGradientEnd);
+    document.documentElement.style.setProperty("--main-color", currentThemeColor);
+    document.documentElement.style.setProperty("--scrollbar-color", currentThemeColor);
+
+    const corners = document.querySelectorAll(".corner");
+    corners.forEach((corner) => {
+      gsap.to(corner, {
+        duration: 1,
+        background: `linear-gradient(135deg, ${newGradientStart}, ${newGradientEnd})`,
+      });
+    });
   };
 
   const handleThemeChange = (color) => {
@@ -59,15 +67,8 @@ const Home = () => {
     const newGradientStart = color + (isDim ? "1a" : "ab");
     const newGradientEnd = color + (isDim ? "1a" : "a3");
 
-    document.documentElement.style.setProperty(
-      "--gradient-start",
-      newGradientStart
-    );
-    document.documentElement.style.setProperty(
-      "--gradient-end",
-      newGradientEnd
-    );
-
+    document.documentElement.style.setProperty("--gradient-start", newGradientStart);
+    document.documentElement.style.setProperty("--gradient-end", newGradientEnd);
     document.documentElement.style.setProperty("--main-color", color);
     document.documentElement.style.setProperty("--scrollbar-color", color);
 
@@ -81,7 +82,7 @@ const Home = () => {
   };
 
   useEffect(() => {
-    handleThemeChange("#8FFF86");
+    handleThemeChange('#8FFF86');
   }, []);
 
   const toggleFullScreen = () => {
@@ -109,51 +110,94 @@ const Home = () => {
     setIsFullScreen(!isFullScreen);
   };
 
+  const toggleMinimize = () => {
+    if (!isMinimized) {
+      gsap.to(".main-container", {
+        scale: 0.95,
+        duration: 1,
+        ease: "power4.inOut",
+      });
+      gsap.to(".background-animation", {
+        opacity: 1,
+        duration: 1,
+        ease: "power4.inOut",
+      });
+    } else {
+      gsap.to(".main-container", {
+        scale: 1,
+        duration: 1,
+        ease: "power4.inOut",
+      });
+      gsap.to(".background-animation", {
+        opacity: 0,
+        duration: 1,
+        ease: "power4.inOut",
+      });
+    }
+    setIsMinimized(!isMinimized);
+  };
+
+  useEffect(() => {
+    const backgroundAnimation = () => {
+      gsap.to(".background-animation", {
+        background: "radial-gradient(circle at center, #8FFF86, #E1B84F, #E14F62, #91D1F8)",
+        duration: 10,
+        repeat: -1,
+        yoyo: true,
+        ease: "power1.inOut",
+      });
+    };
+
+    backgroundAnimation();
+  }, []);
+
   return (
     <div className="parent-container">
-      {/* {!isLoaded && <Loader onFinishLoading={handleFinishLoading} />} */}
-      {/* Render content once loaded */}
-      {/* {isLoaded && ( */}
+      <div className="background-animation"></div>
       <div className="main-container">
         <div className="top px-2 d-flex justify-content-between">
           <div className="logo fs-5 mt-1">op</div>
           <div className="logo-name fs-5 ms-4 mt-1">zainop</div>
           <div className="controls me-2 gap-3 d-flex">
             <i>
-              <FaRegWindowMinimize />
+              <FaRegWindowMinimize onClick={toggleMinimize} />
             </i>
-            <FaRegSquare onClick={toggleFullScreen} />
-            <RxCross1 />
+            <i>
+              <FaRegSquare onClick={toggleFullScreen} />
+            </i>
+            <i>
+              <RxCross1 />
+            </i>
           </div>
         </div>
         <div className="bottom d-flex justify-content-between align-items-center px-3">
-          <div className="theme-buttons-container d-flex">
-            <button
-              className="theme-button"
-              style={{ backgroundColor: "#91D1F8" }}
-              onClick={() => handleThemeChange("#91D1F8")}
-            ></button>
-            <button
-              className="theme-button"
-              style={{ backgroundColor: "#E14F62" }}
-              onClick={() => handleThemeChange("#E14F62")}
-            ></button>
-            <button
-              className="theme-button"
-              style={{ backgroundColor: "#E1B84F" }}
-              onClick={() => handleThemeChange("#E1B84F")}
-            ></button>
-            <button
-              className="theme-button"
-              style={{ backgroundColor: "#8FFF86" }}
-              onClick={() => handleThemeChange("#8FFF86")}
-            ></button>
-          </div>
           <FaCircle
             className="theme-button"
             onClick={toggleDim}
             style={{ color: currentThemeColor }}
           />
+          <div className="theme-buttons-container">
+          <button
+  className="theme-button"
+  style={{ backgroundColor: "#91D1F8" }}
+  onClick={() => handleThemeChange("#91D1F8")}
+></button>
+<button
+  className="theme-button"
+  style={{ backgroundColor: "#E14F62" }}
+  onClick={() => handleThemeChange("#E14F62")}
+></button>
+<button
+  className="theme-button"
+  style={{ backgroundColor: "#E1B84F" }}
+  onClick={() => handleThemeChange("#E1B84F")}
+></button>
+<button
+  className="theme-button"
+  style={{ backgroundColor: "#8FFF86" }}
+  onClick={() => handleThemeChange("#8FFF86")}
+></button>
+          </div>
           <div className="country ms-5">Based in Pakistan</div>
           <div className="links gap-2 d-flex">
             <FaLinkedin />
@@ -190,13 +234,10 @@ const Home = () => {
             </NavLink>
           </nav>
         </div>
-
         <Content />
-
         <div className="corner top-left"></div>
         <div className="corner bottom-right"></div>
       </div>
-      {/* )} */}
     </div>
   );
 };

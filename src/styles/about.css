@@ -1,0 +1,101 @@
+.about-content {
+  margin: 40px 0px 40px 40px;
+  color: #fff;
+  height: calc(100% - 80px);
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+.about-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.about-content::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+.about-content::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-color);
+  border-radius: 10px;
+}
+.hero-about {
+  width: 100%;
+  height: 90vh;
+  position: relative;
+  /* border-bottom: 1px solid #707070; */
+}
+.hero-about .text-area-about {
+  width: 60%;
+  margin: auto;
+}
+
+.hero-about .text-area-about h1 {
+  z-index: 9999; /* Adjusted to a reasonable value */
+  font-family: "Comfortaa", sans-serif;
+  font-weight: bold;
+  font-size: 100px;
+  text-align: center;
+}
+
+.hero-about .text-area-about p {
+  z-index: 9999; /* Adjusted to a reasonable value */
+  /* font-family: "Courier Prime", monospace; */
+  font-family: "Comfortaa", sans-serif;
+  font-size: 16px;
+  text-align: center;
+  color: #ababab;
+}
+.hero-about .bg-text h1 {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  font-family: "Courier Prime", monospace;
+  position: absolute;
+  font-size: 700px;
+  top: 0;
+  font-weight: 600;
+  color: #707070;
+  mix-blend-mode: overlay;
+  z-index: 999; /* Decreased to be behind the image */
+}
+/* Techs */
+.tech-container {
+  border: 1px solid red;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.tech-heading {
+  font-family: "Comfortaa", sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+  text-align: center;
+  width: 40%;
+  margin: 0 auto;
+  /* border: 1px solid red; */
+}
+.tech-card-container{
+    width: 55%;
+    margin: 100px auto;
+  border: 0.5px solid rgba(255, 255, 255, 0.144);
+  background-color: #0f0f0f75;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+z-index: 999;
+position: relative;
+}
+.tech-card-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 10px; */
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.144);
+    padding: 14px;
+    /* gap: 20px; */
+}
+.tech-body{
+    padding: 50px;
+ 
+}

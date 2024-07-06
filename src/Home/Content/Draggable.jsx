@@ -64,7 +64,7 @@ const DraggableComponent = () => {
             <i><FaTimes /></i>
           </div>
         </div>
-        <div className="about-content">
+        <div className="about-content m-3">
           {/* Point 1 */}
           <p>
             <span className="points">1 -</span>Nice to meet you! I'm Zain, I'm a
